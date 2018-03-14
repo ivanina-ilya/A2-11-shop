@@ -11,13 +11,11 @@ import { Category } from 'app/model/Category';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  productsService: ProductsService;
   title = 'Store';
   prodcts: Product[];
   categories: Category[];
 
-  constructor() {
-    this.productsService = new ProductsService();
+  constructor(protected productsService: ProductsService ) {
     this.prodcts = this.productsService.getProducts();
     this.categories = Object.keys(Category)
       .filter(c => parseInt(c, 10) >= 0)

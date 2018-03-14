@@ -1,4 +1,4 @@
-export const enum Category {
+export enum Category {
     Laptop,
     Tables,
     Accessories

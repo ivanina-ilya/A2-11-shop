@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Product } from './model/Product';
-import { Category } from './model/Category';
 import { ProductStore } from './model/ProductStore';
 import { ProductStoreSingleton } from 'app/model/ProductStoreSingleton';
+import { ProductsService } from './service/products.service';
+import { Category } from 'app/model/Category';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +11,20 @@ import { ProductStoreSingleton } from 'app/model/ProductStoreSingleton';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  productsService: ProductsService;
   title = 'Store';
+  prodcts: Product[];
+  categories: Category[];
 
-  products: Product[] = [
-    new Product(
-      '81BF00EFRA', 'Lenovo IdeaPad 520-15', '15.6" IPS (1920x1080) Full HD, Intel Core i5-8250U', Category.Laptop),
-    new Product(
-      'FX553VE-DM406', 'Asus FX553VE', '15.6" (1920x1080) Full HD,  Intel Core i5-7300HQ, nVidia GeForce GTX 1050 T', Category.Laptop),
-    new Product(
-      'MPGT2RK/A', 'Apple iPad A1822 Wi-Fi 32GB', '9.7" IPS (2048x1536), Apple A9, iOS 10', Category.Tables)
-  ];
+  constructor() {
+    this.productsService = new ProductsService();
+    this.prodcts = this.productsService.getProducts();
+    this.categories = Object.keys(Category)
+      .filter(c => parseInt(c, 10) >= 0)
+      .map(c => Category[c]);
+  }
 
-  // inStock: ProductStoreSingleton = ProductStoreSingleton.Instance;
-  // inStock.push('dd');
-
+  getPoductsByCategory(category: Category) {
+    return this.productsService.getPoductsByCategory(category);
+  }
 }

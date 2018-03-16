@@ -1,0 +1,13 @@
+<ul class="app-catalog-list">
+  <h3>Categories:</h3>
+  <li class="app-catalog" *ngFor='let category of categories'>
+    <h4>{{category}}</h4>
+    <div class="products">
+      <ul>
+        <li *ngFor="let product of getPoductsByCategory(category)">
+            <app-product [product]="product"></app-product>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

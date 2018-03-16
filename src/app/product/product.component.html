@@ -1,0 +1,8 @@
+<div class="product">
+  <div><label>Name:</label>{{product.name}}</div>
+  <div><label>Sku:</label>{{product.sku}}</div>
+  <label>Description:</label>
+  <i>{{product.description}}</i>
+  <div *ngIf='isAvailable'>{{product.price | currency}}</div>
+  <div><button [disabled]="!isAvailable">Buy</button></div>
+</div>

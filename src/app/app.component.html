@@ -1,20 +1,7 @@
-
 <div style="text-align:center">
-  <h1>
+  <h2>
     Welcome to {{ title }}!
-  </h1>
+  </h2>
 </div>
 <h2>Here are some goods:</h2>
-<h3>in Categories:</h3>
-<ul>
-  <li *ngFor="let category of categories">
-    <h4>{{category}}</h4>
-    <ul>
-      <li *ngFor="let product of getPoductsByCategory(category)">
-        {{product.name}}
-      </li>
-    </ul>
-  </li>
-</ul>
-
-
+<app-catalog></app-catalog>

@@ -1,4 +1,4 @@
-import {Category} from 'app/model/Category';
+import {Category} from './Category';
 
 export class Product {
     constructor (

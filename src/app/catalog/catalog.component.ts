@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from 'app/model/Product';
-import { ProductStore } from 'app/model/ProductStore';
-import { ProductStoreSingleton } from 'app/model/ProductStoreSingleton';
-import { ProductsService } from 'app/product/products.service';
-import { Category } from 'app/model/Category';
+import { Product } from '../model/Product';
+import { ProductStore } from '../model/ProductStore';
+import { ProductStoreSingleton } from '../model/ProductStoreSingleton';
+import { ProductsService } from '../product/products.service';
+import { Category } from '../model/Category';
 
 @Component({
   selector: 'app-catalog',

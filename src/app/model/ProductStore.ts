@@ -1,4 +1,4 @@
-import {CounterType} from 'app/model/CounterType';
+import {CounterType} from './CounterType';
 
 export class ProductStore {
     inStore: CounterType[] = new Array();

@@ -2,12 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 
-
-import { AppComponent } from 'app/app.component';
-import { ProductComponent } from 'app/product/product.component';
-import { ProductsService } from 'app/product/products.service';
-import { CatalogComponent } from 'app/catalog/catalog.component';
-import { CartComponent } from 'app/cart/cart.component';
+import { AppComponent } from './app.component';
+import { ProductComponent } from './product/product.component';
+import { ProductsService } from './product/products.service';
+import { CatalogComponent } from './catalog/catalog.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({

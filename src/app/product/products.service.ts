@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Product } from 'app/model/Product';
-import { Category } from 'app/model/Category';
-import { ProductStoreSingleton } from 'app/model/ProductStoreSingleton';
+import { Product } from '../model/Product';
+import { Category } from '../model/Category';
+import { ProductStoreSingleton } from '../model/ProductStoreSingleton';
 import { isNumber } from 'util';
 
 @Injectable()

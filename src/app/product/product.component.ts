@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
 
-import {ProductStoreSingleton} from 'app/model/ProductStoreSingleton';
-import { ProductsService } from 'app/product/products.service';
-import {Product} from 'app/model/Product';
+import {ProductStoreSingleton} from '../model/ProductStoreSingleton';
+import { ProductsService } from '../product/products.service';
+import {Product} from '../model/Product';
 
 @Component({
   selector: 'app-product',

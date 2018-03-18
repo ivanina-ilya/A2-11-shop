@@ -1,4 +1,4 @@
-import {ProductStore} from 'app/model/ProductStore';
+import {ProductStore} from './ProductStore';
 
 export class ProductStoreSingleton extends ProductStore {
     private static _instance: ProductStoreSingleton;

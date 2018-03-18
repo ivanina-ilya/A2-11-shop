@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Product } from '../model/Product';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,17 +9,43 @@ import { Product } from '../model/Product';
 })
 export class CartComponent implements OnInit {
 
-  inCart: Product[];
-  count: number;
-
-  constructor() { }
+  constructor(
+    protected cartService: CartService
+  ) { }
 
   ngOnInit() {
-    if (typeof this.inCart === 'undefined') {
-      this.count = 0;
-    } else {
-      this.count = this.inCart.length;
-    }
+  }
+
+  getProductCountInCart(sku?: string): number {
+    return this.cartService.getProductCountInCart(sku);
+  }
+
+  getProductsInCart(): Product[] {
+    return this.cartService.getProductsInCart();
+  }
+
+  getPrice(sku: string): number {
+    return this.cartService.price(sku);
+  }
+
+  total(): number {
+    return this.cartService.total();
+  }
+
+  addOne(sku: string): void {
+    this.cartService.addToCart(sku, 1);
+  }
+
+  removeOne(sku: string): void {
+    this.cartService.removeFromCart(sku, 1);
+  }
+
+  deleteProduct(sku: string): void {
+    this.cartService.removeFromCart(sku);
+  }
+
+  isAvailable(sku: string): boolean {
+    return this.cartService.isAvailableInStock(sku);
   }
 
 }

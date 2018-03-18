@@ -1,8 +1,13 @@
-<div class="product">
+<div *ngIf="!isShortDisplay"  class="product product-full-view">
   <div><label>Name:</label>{{product.name}}</div>
   <div><label>Sku:</label>{{product.sku}}</div>
   <label>Description:</label>
   <i>{{product.description}}</i>
-  <div *ngIf='isAvailable'>{{product.price | currency}}</div>
-  <div><button [disabled]="!isAvailable">Buy</button></div>
+  <div class="available">Available: {{available()}} in stock</div>
+  <div *ngIf='isAvailable()'>{{product.price | currency}}</div>
+  <div><button [disabled]="!isAvailable()" (click)="buy(product.sku)">Buy</button></div>
+</div>
+<div *ngIf="isShortDisplay"  class="product product-short-view">
+  <div><label>Name:</label>{{product.name}}</div>
+  <div><label>Sku:</label>{{product.sku}}</div>
 </div>

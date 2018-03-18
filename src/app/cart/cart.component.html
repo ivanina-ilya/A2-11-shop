@@ -1,3 +1,17 @@
 <div>
-    <h4>In Cart {{inCart}} goods</h4>
-</div>>
+    <h4>In Cart {{getProductCountInCart()}} goods</h4>
+    <ul class="items">
+        <li *ngFor="let product of getProductsInCart()">
+            <app-product [product]="product" [isShortDisplay]="true"></app-product>
+            <div>Count in cart: {{getProductCountInCart(product.sku)}}</div>
+            <div>Price: {{getPrice(product.sku)}}</div>
+            <div class="operation" *ngIf="getProductCountInCart(product.sku) > 0">
+                <span (click)="addOne(product.sku)" *ngIf="isAvailable(product.sku)" >[ + ]</span>&nbsp;
+                <span (click)="removeOne(product.sku)">[ - ]</span>&nbsp;
+                <span (click)="deleteProduct(product.sku)">[ x ]</span>&nbsp;
+            </div>
+            <br/>
+        </li>
+    </ul>
+    <h4>Total: {{total() | currency }}</h4>
+</div>

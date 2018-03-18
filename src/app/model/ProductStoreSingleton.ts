@@ -11,7 +11,7 @@ export class ProductStoreSingleton extends ProductStore {
     }
 
     getInStoreCount(sku: string): number {
-        return this.inStore[sku];
+        return this.inStore[sku] ? this.inStore[sku] : 0 ;
     }
 
     isInStore(sku: string): boolean {

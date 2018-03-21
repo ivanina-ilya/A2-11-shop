@@ -9,7 +9,7 @@ import { ProductMapType } from '../model/ProductMapType';
 @Injectable()
 export class ProductsService {
 
-  private products: ProductMapType[] = new Array();
+  private products: Product[] = [];
   inStock: ProductStoreSingleton = ProductStoreSingleton.Instance;
 
   constructor() {

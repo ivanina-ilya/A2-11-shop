@@ -1,0 +1,7 @@
+<div>
+  <div>SKU: {{product.sku}}</div>
+  <div>{{product.title}}</div>
+  <div>{{product.price | currency}}</div>
+  <div>(in stock: {{inStock()}})</div>
+  <app-add-to-cart [product]="product"></app-add-to-cart>
+</div>

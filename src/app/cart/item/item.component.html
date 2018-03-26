@@ -1,0 +1,10 @@
+<div>
+  <div>{{product.title}}</div>
+  <div>SKU: {{product.sku}} &nbsp;&nbsp;<span *ngIf="inStock() > 1">x {{inStock()}}</span></div>
+  <div>Price: {{getPrice() | currency}}</div>
+  <div>
+    <button (click)="add()" [disabled]="!isAvailable()">+</button>
+    <button (click)="reduce()">-</button>
+    <button (click)="remove()">x</button>
+  </div>
+</div>

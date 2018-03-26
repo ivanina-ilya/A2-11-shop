@@ -1,0 +1,7 @@
+<div *ngIf="getProducts().length > 0">
+  <div >
+    <app-cart-item *ngFor="let product of getProducts()" [product]="product"></app-cart-item>
+  </div>
+  <div>Total: {{getTotal()}}</div>
+  <button (click)="clearCart()">Clear Cart</button>
+</div>

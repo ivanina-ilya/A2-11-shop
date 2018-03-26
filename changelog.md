@@ -12,4 +12,9 @@
 * Buttons for add, remove and reduce products in cart, clear cart button
 * used `@Input()` but `@Output()` do not use
 * `click` as DOM-event
-* used ngOnInit and 
+* used `ngOnInit` and `OnDestroy` for logging to console
+* used `#variable` for some data from cart in app template
+
+
+#### Cannot resolve problem with non-working directive `mouseOverHighlight`
+`MouseOverHighlightDirective` with HostListener

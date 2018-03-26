@@ -2,6 +2,7 @@
   <div >
     <app-cart-item *ngFor="let product of getProducts()" [product]="product"></app-cart-item>
   </div>
-  <div>Total: {{getTotal()}}</div>
+  <p></p>
+  <div>Total: {{getTotal() | currency}}</div>
   <button (click)="clearCart()">Clear Cart</button>
 </div>

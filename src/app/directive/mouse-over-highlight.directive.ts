@@ -11,20 +11,18 @@ export class MouseOverHighlightDirective {
     private render: Renderer2
     ) { }
 
-  @HostListener('click')
+  /*@HostListener('click')
   onClick() {
     console.log(">> D -> click.....");
-  }
+  }*/
 
   @HostListener('mouseenter')
   myOnMouseEnter(): void {
-    console.log(">> D -> mouse enter.....");
     this.highlight(this.color);
   }
 
   @HostListener('mouseleave')
   myOnMouseLeave(): void {
-    console.log(">> D -> mouse leave.....");
     this.highlight(null);
   }
 

@@ -1,4 +1,4 @@
-<div>
+<div mouseOverHighlight="Snow">
   <div>{{product.title}}</div>
   <div>SKU: {{product.sku}} &nbsp;&nbsp;<span *ngIf="inStock() > 1">x {{inStock()}}</span></div>
   <div>Price: {{getPrice() | currency}}</div>

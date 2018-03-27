@@ -3,15 +3,17 @@ import {Counter} from "../model/Counter";
 import {Product} from "../model/Product";
 
 @Injectable()
-export class StoreService implements OnInit{
+export class StoreService {
+
+  static isInit: boolean = false;
 
   private _inStock: Counter[] = [];
   private products: Product[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.init();
   }
+
 
   // products handling
 
@@ -80,4 +82,29 @@ export class StoreService implements OnInit{
     return counter.count;
   }
 
+  // For test preFilling product list
+
+  init(): void {
+    if( StoreService.isInit ) { new Error('The product list can be initialized once')}
+    StoreService.isInit = true;
+    console.log('ProductsService init: start');
+    // init and fill product list
+    this.addProduct(
+      new Product('SKU-P-1', 'Product one', 150.50, 'This is description for Product one'),
+      5
+    );
+    this.addProduct(
+      new Product('SKU-P-2', 'Product two', 20, 'This is description for Product two'),
+      0
+    );
+    this.addProduct(
+      new Product('SKU-P-3', 'Product three', 75.25, 'This is description for Product three'),
+      2
+    );
+    this.addProduct(
+      new Product('SKU-P-4', 'Product four', 99.90, 'This is description for Product four'),
+      10
+    );
+
+  }
 }

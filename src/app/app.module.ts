@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {CoreModule} from "./core/core.module";
 import {ProductsModule} from "./products/products.module";
 import {CartModule} from "./cart/cart.module";
+import {DemoModule} from "./demo/demo.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {CartModule} from "./cart/cart.module";
     CoreModule,
 
     ProductsModule,
-    CartModule
+    CartModule,
+    DemoModule
   ],
   providers: [
   ],

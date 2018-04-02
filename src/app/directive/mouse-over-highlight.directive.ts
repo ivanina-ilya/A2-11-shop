@@ -1,10 +1,10 @@
 import {Directive, ElementRef, Renderer2, Input, HostListener} from '@angular/core';
 
 @Directive({
-  selector: '[mouseOverHighlight]'
+  selector: '[appMouseOverHighlight]'
 })
 export class MouseOverHighlightDirective {
-  @Input('mouseOverHighlight') color: string;
+  @Input() color: string;
 
   constructor(
     private el: ElementRef,
@@ -26,11 +26,11 @@ export class MouseOverHighlightDirective {
     this.highlight(null);
   }
 
-  private highlight(color: string){
+  private highlight(color: string) {
     this.render.setStyle(
       this.el.nativeElement,
       'background-color',
-      typeof color === 'undefined' ? 'gray' : color)
+      typeof color === 'undefined' ? 'gray' : color);
   }
 
 }

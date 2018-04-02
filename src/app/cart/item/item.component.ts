@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
-import {Product} from "../../model/Product";
-import {CartService} from "../cart.service";
+import {Product} from '../../model/Product';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -15,11 +15,11 @@ export class ItemComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit() {
-    console.log('Product in Cart ItemComponent has been init')
+    console.log('Product in Cart ItemComponent has been init');
   }
 
   ngOnDestroy() {
-    console.log('Product in Cart ItemComponent has been destroyed')
+    console.log('Product in Cart ItemComponent has been destroyed');
   }
 
   inStock(): number {
@@ -31,11 +31,11 @@ export class ItemComponent implements OnInit, OnDestroy {
   }
 
   add(): void {
-    this.cartService.addToCart(this.product.sku,1);
+    this.cartService.addToCart(this.product.sku, 1);
   }
 
   reduce(): void {
-    this.cartService.removeFromCart(this.product.sku,1);
+    this.cartService.removeFromCart(this.product.sku, 1);
   }
 
   remove(): void {

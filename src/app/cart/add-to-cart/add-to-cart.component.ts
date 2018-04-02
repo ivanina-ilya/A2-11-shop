@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from "../../model/Product";
-import {CartService} from "../cart.service";
+import {Product} from '../../model/Product';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -21,7 +21,7 @@ export class AddToCartComponent implements OnInit {
   }
 
   isActive(): boolean {
-    return this.cartService.isProductAvailable( this.product.sku )
+    return this.cartService.isProductAvailable( this.product.sku );
   }
 
 }

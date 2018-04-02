@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import {CoreModule} from "./core/core.module";
-import {ProductsModule} from "./products/products.module";
-import {CartModule} from "./cart/cart.module";
-import {DemoModule} from "./demo/demo.module";
+import {CoreModule} from './core/core.module';
+import {ProductsModule} from './products/products.module';
+import {CartModule} from './cart/cart.module';
+import {DemoModule} from './demo/demo.module';
 
 
 @NgModule({

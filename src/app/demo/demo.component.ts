@@ -1,6 +1,7 @@
 import { Component, Inject, InjectionToken, OnInit, Optional} from '@angular/core';
 import { ConfigOptionsService } from '../config/config-options.service';
 import { GeneratorServiceType } from './generator-service.factory';
+import {LocalStorageService} from '../local-storage/local-storage.service';
 
 const ConstantsService = new InjectionToken<any>('ConstantsService');
 
@@ -10,16 +11,23 @@ const ConstantsService = new InjectionToken<any>('ConstantsService');
   styleUrls: ['./demo.component.css'],
   providers: [
     {provide: ConstantsService, useValue: {App: 'TaskManager', Ver: '1.0'}},
+    LocalStorageService
   ]
 
 })
 export class DemoComponent implements OnInit {
+  private keyLocalStorageTestData = 'test-local-data';
+
   constructor(@Optional() private configOptionsService: ConfigOptionsService,
               @Optional() @Inject(GeneratorServiceType) private randomStringFactory: string,
-              @Optional() @Inject(ConstantsService) private constantsService: any
+              @Optional() @Inject(ConstantsService) private constantsService: any,
+              private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit() {
+    const  obj = {... this.configOptionsService.get()};
+    obj.created = new Date();
+    this.localStorageService.setItem(this.keyLocalStorageTestData, {...obj} );
   }
 
   getConfigKeys(): string[] {
@@ -40,5 +48,9 @@ export class DemoComponent implements OnInit {
 
   generatePass(): string {
     return this.randomStringFactory;
+  }
+
+  getTestLocalStorageData(): any {
+    return this.localStorageService.getItem(this.keyLocalStorageTestData);
   }
 }

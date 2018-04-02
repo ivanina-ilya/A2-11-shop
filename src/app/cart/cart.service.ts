@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Product} from '../model/Product';
-import {LocalStorageService} from '../core/local-storage.service';
+import {StorageService} from '../core/storage.service';
 import {Counter} from '../model/Counter';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class CartService {
 
   private _inCart: Counter[] = [];
 
-  constructor(private storeService: LocalStorageService) { }
+  constructor(private storeService: StorageService) { }
 
   getInCart(sku: string): Counter {
     return this._inCart.find( it => it.sku === sku );

@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 
 const config = {
-  "id": 101,
-  "email": "tes-email@test.com",
-  "title": "Test title",
-  "address": {
-    "country": "UK",
-    "city": "UK",
-    "street": "Baker street"
+  'id': 101,
+  'email': 'tes-email@test.com',
+  'title': 'Test title',
+  'address': {
+    'country': 'UK',
+    'city': 'UK',
+    'street': 'Baker street'
   }
-}
+};
 
 @Injectable()
 export class ConfigOptionsService {
@@ -26,5 +26,4 @@ export class ConfigOptionsService {
   keys(): string[] {
     return Object.keys( this.config );
   }
-
 }

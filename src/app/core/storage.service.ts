@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Counter } from '../model/Counter';
 import { Product } from '../model/Product';
-import { LocalStorage } from '../localStorage/localStorage';
+import { DBObject } from './DBObject';
 
 @Injectable()
-export class LocalStorageService {
+export class StorageService {
 
   static isInit = false;
-  private storage: LocalStorage = LocalStorage.Instance;
+  private storage: DBObject = DBObject.Instance;
 
   constructor() {
     this.init();
@@ -82,8 +82,8 @@ export class LocalStorageService {
   // For test preFilling product list
 
   init(): void {
-    if ( LocalStorageService.isInit ) { throw new Error('The product list can be initialized once'); }
-    LocalStorageService.isInit = true;
+    if ( StorageService.isInit ) { throw new Error('The product list can be initialized once'); }
+    StorageService.isInit = true;
     console.log('ProductsService init: start');
     // init and fill product list
     this.addProduct(

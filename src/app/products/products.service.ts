@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {LocalStorageService} from '../core/local-storage.service';
+import {StorageService} from '../core/storage.service';
 import {Product} from '../model/Product';
 
 @Injectable()
 export class ProductsService {
-  constructor(protected storeService: LocalStorageService ) { }
+  constructor(protected storeService: StorageService ) { }
 
   getProductList(): Product[] {
     return this.storeService.getProducts();

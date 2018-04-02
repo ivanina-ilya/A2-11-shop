@@ -1,10 +1,10 @@
 import {Directive, ElementRef, HostBinding, HostListener, Input, Renderer2} from '@angular/core';
 
 @Directive({
-  selector: '[fontSizeIncrease]'
+  selector: '[appFontSizeIncrease]'
 })
 export class DemoDirective {
-  @Input('fontSizeIncrease') size:number;
+  @Input() size: number;
   private maxSize = 28;
   @HostBinding('style.font-size')
   private currentSize = 14;
@@ -18,12 +18,12 @@ export class DemoDirective {
 
   @HostListener('click')
   onClick() {
-    console.log({'@Input size':this.size, 'maxSize': this.maxSize, 'currentSize': this.currentSize});
-    if(this.currentSize > this.maxSize) { this.currentSize = this.size }
+    console.log({'@Input size': this.size, 'maxSize': this.maxSize, 'currentSize': this.currentSize});
+    if (this.currentSize > this.maxSize) { this.currentSize = this.size; }
     this.render.setStyle(
       this.el.nativeElement,
       'font-size',
-      this.currentSize++ +'px')
+      this.currentSize++ + 'px');
   }
 
 }

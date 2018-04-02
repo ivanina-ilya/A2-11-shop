@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MouseOverHighlightDirective} from "../directive/mouse-over-highlight.directive";
+import {MouseOverHighlightDirective} from '../directive/mouse-over-highlight.directive';
 
 @NgModule({
   imports: [

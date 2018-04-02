@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
-declare let require: any;
-const config = require('./config.json');
+
+const config = {
+  "id": 101,
+  "email": "tes-email@test.com",
+  "title": "Test title",
+  "address": {
+    "country": "UK",
+    "city": "UK",
+    "street": "Baker street"
+  }
+}
 
 @Injectable()
 export class ConfigOptionsService {
@@ -10,7 +19,7 @@ export class ConfigOptionsService {
   }
 
   get(name?: string): any {
-    if(typeof name === 'undefined') { return this.config;}
+    if (typeof name === 'undefined') { return this.config; }
     return this.config[name];
   }
 

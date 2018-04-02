@@ -2,9 +2,7 @@ import { Component, Inject, InjectionToken, OnInit, Optional} from '@angular/cor
 import { ConfigOptionsService } from '../config/config-options.service';
 import { GeneratorServiceType } from './generator-service.factory';
 
-
-// TODO: Why?? If we exported from module - do not work
-// import { ConstantsService } from './demo.module';
+import { ConstantsService } from './constants.service';
 const ConstantsService = new InjectionToken<any>('ConstantsService');
 
 @Component({

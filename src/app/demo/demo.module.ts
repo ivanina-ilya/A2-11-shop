@@ -6,23 +6,16 @@ import { DemoComponent } from './demo.component';
 import { DemoDirective } from './demo.directive';
 import { SharedModule} from '../shared/shared.module';
 
+import { ConstantsServiceProvider } from './constants.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SharedModule
-  ],
-  exports: [
-    DemoComponent
-  ],
-  declarations: [
-    DemoComponent,
-    DemoDirective
-  ],
+  imports: [CommonModule, SharedModule],
+  exports: [DemoComponent],
+  declarations: [DemoComponent, DemoDirective],
   providers: [
     ConfigOptionsService,
-
+    ConstantsServiceProvider,
     {provide: GeneratorServiceType, useFactory: GeneratorServiceFactory(8)}
   ]
 })
-export class DemoModule { }
+export class DemoModule {}

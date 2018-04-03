@@ -32,5 +32,4 @@ export class MouseOverHighlightDirective {
       'background-color',
       typeof color === 'undefined' ? 'gray' : color);
   }
-
 }

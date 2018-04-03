@@ -43,3 +43,5 @@ testem.log
 .DS_Store
 Thumbs.db
 A2-11-shop.iml
+.vscode
+

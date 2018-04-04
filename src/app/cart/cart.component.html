@@ -1,6 +1,6 @@
 <div *ngIf="getProducts().length > 0">
   <div >
-    <app-cart-item *ngFor="let product of getProducts()" [product]="product"></app-cart-item>
+    <app-cart-item *ngFor="let product of getProducts() | appOrderBy: 'inCart' : false" [product]="product"></app-cart-item>
   </div>
   <p></p>
   <div>Total: {{getTotal() | currency}}</div>

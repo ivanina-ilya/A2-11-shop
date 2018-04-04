@@ -1,25 +1,54 @@
 
-<div>
-  <h3>Store</h3>
-  <div>
-    <app-products></app-products>
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Store
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+          <div>
+            <app-products></app-products>
+          </div>
+      </div>
+    </div>
   </div>
-</div>
-<hr/>
-<div >
-  <h3>Cart
-    <span *ngIf="cart.getCount() > 0">
-      ({{cart.getCount()}} products for {{cart.getTotal() | currency}})
-    </span>
-  </h3>
-  <div>
-    <app-cart #cart></app-cart>
+  
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Cart
+        </button>
+      </h5>
+      <span *ngIf="cart.getCount() > 0">
+        ({{cart.getCount()}} products for {{cart.getTotal() | currency}})
+      </span>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <div>
+          <app-cart #cart></app-cart>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<hr/>
-<div>
-  <h5>DEMO</h5>
-  <app-demo></app-demo>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          DEMO
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <app-demo></app-demo>
+      </div>
+    </div>
+  </div>
 </div>
 

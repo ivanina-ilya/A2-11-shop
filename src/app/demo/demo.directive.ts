@@ -4,7 +4,8 @@ import {Directive, ElementRef, HostBinding, HostListener, Input, Renderer2} from
   selector: '[appFontSizeIncrease]'
 })
 export class DemoDirective {
-  @Input() size: number;
+  // tslint:disable-next-line:no-input-rename
+  @Input('appFontSizeIncrease') size: number;
   private maxSize = 28;
   @HostBinding('style.font-size')
   private currentSize = 14;
@@ -14,16 +15,13 @@ export class DemoDirective {
     private render: Renderer2
   ) { }
 
-
-
   @HostListener('click')
   onClick() {
-    console.log({'@Input size': this.size, 'maxSize': this.maxSize, 'currentSize': this.currentSize});
     if (this.currentSize > this.maxSize) { this.currentSize = this.size; }
     this.render.setStyle(
       this.el.nativeElement,
       'font-size',
-      this.currentSize++ + 'px');
+      ++this.currentSize + 'px');
   }
 
 }

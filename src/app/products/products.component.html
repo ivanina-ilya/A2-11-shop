@@ -1,3 +1,5 @@
-<div *ngFor="let product of getProductList()" >
+<div *ngFor="let product of getProducts | async | appOrderBy: 'price' : false" >
   <app-product [product]="product" ></app-product>
 </div>
+<div class="alert alert-danger" *ngIf="pseudoErrorMessage">{{pseudoErrorMessage}}</div>
+

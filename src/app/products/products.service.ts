@@ -6,7 +6,7 @@ import {Product} from '../model/Product';
 export class ProductsService {
   constructor(protected storeService: StorageService ) { }
 
-  getProductList(): Product[] {
+  getProducts(): Product[] {
     return this.storeService.getProducts();
   }
 

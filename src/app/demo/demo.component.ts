@@ -53,4 +53,8 @@ export class DemoComponent implements OnInit {
   getTestLocalStorageData(): any {
     return this.localStorageService.getItem(this.keyLocalStorageTestData);
   }
+
+  getDate(): Date {
+    return new Date();
+  }
 }

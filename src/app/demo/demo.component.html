@@ -1,38 +1,122 @@
-<div>
-  <p> List of keys in config
-  </p>
-  <pre>{{getConfigKeys() | json}}</pre>
-</div>
-<div>
-  <p> Config for name 'email'
-  </p>
-  <pre>{{getConfigByName('email') | json}}</pre>
-</div>
-<div>
-  <p> Config as full object
-  </p>
-  <pre>{{getConfig() | json}}</pre>
-</div>
-<div>
-  <p> Object from local storage
-  </p>
-  <pre>{{getTestLocalStorageData() | json}}</pre>
-</div>
-<div>
-  <p> ConstantsService
-  </p>
-  <pre>{{getConstantsService() | json}}</pre>
+
+<div id="accordionDemo">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseDemo_1" aria-expanded="true" aria-controls="collapseDemo_1">
+          List of keys in config
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionDemo">
+      <div class="card-body">
+        <pre>{{getConfigKeys() | json}}</pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_2" aria-expanded="false" aria-controls="collapseDemo_2">
+          Config for name 'email'
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionDemo">
+      <div class="card-body">
+        <pre>{{getConfigByName('email') | json}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_3" aria-expanded="false" aria-controls="collapseDemo_3">
+          Config as full object
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDemo">
+      <div class="card-body">
+        <pre>{{getConfig() | json}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_4" aria-expanded="false" aria-controls="collapseDemo_4">
+          Object from local storage
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_4" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDemo">
+      <div class="card-body">
+        <pre>{{getTestLocalStorageData() | json}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_5" aria-expanded="false" aria-controls="collapseDemo_5">
+          ConstantsService
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_5" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDemo">
+      <div class="card-body">
+        <pre>{{getConstantsService() | json}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_6" aria-expanded="false" aria-controls="collapseDemo_6">
+          Random pass
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_6" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDemo">
+      <div class="card-body">
+        {{generatePass()}}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_7" aria-expanded="false" aria-controls="collapseDemo_7">
+          Font size increase by click
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_7" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDemo">
+      <div class="card-body">
+        <div appFontSizeIncrease="16" appMouseOverHighlight="LightGray">
+          <h5>(click me)</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDemo_8" aria-expanded="false" aria-controls="collapseDemo_8">
+          Current data-time with pipe
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDemo_8" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDemo">
+      <div class="card-body">
+        <p>shortTime: {{ getDate() | date: 'shortTime' }}</p>
+        <p>fullTime: {{ getDate() | date: 'fullTime' }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div >
-  <p> Random pass
-  </p>
-  <pre>{{generatePass()}}</pre>
-</div>
-
-<div appFontSizeIncrease="14" appMouseOverHighlight="LightGray">
-  <h5> Font size increase (click me)</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-
-</div>
 
